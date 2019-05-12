@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "production build",
+			"type": "shell",
+			"command": "npm",
+			"args": ["run", "prepare"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
