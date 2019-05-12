@@ -9,18 +9,26 @@ export class CarouserPane extends Component {
 				padding: 0;
 				box-sizing: border-box;
 			}
+
+			:host {
+				display: block;
+			}
+
+			:host([hidden]), :host([hidden]) ::slotted(*) {
+				display: none;
+			}
 		`
 	}
 
 	static get properties() {
-		return {}
+		return {
+			hidden: {type: Boolean, reflect: true}
+		}
 	}
 
 	render() {
 		return html`
-			<div>
-				<slot></slot>
-			</div>
+			<slot></slot>
 		`
 	}
 }

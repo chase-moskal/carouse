@@ -5,7 +5,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	--focus-outline: 3px solid lime;
+	--focus-outline: 2px solid #0ef;
 }
 
 *:focus {
@@ -25,4 +25,12 @@ body > header {
 
 body > main {
 	padding: 1em;
+}
+
+main > h1 {
+	margin-bottom: 1em;
+}
+
+carouser-pane {
+	padding: 1em 3em;
 }
