@@ -83,7 +83,7 @@ export class CarouseCarousel extends Component {
 			}
 
 			.dots > button {
-				opacity: 0.5;
+				opacity: 0.3;
 				display: block;
 				border: none;
 				--dotsize: var(--carouse-dot-size, 0.8em);
@@ -97,7 +97,7 @@ export class CarouseCarousel extends Component {
 
 			.dots > button:hover,
 			.dots > button:focus {
-				opacity: 0.8;
+				opacity: 0.6;
 			}
 
 			.dots > button[active],
