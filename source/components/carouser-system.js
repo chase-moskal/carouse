@@ -1,9 +1,10 @@
 
 import {Component, html, css} from "../toolbox/component.js"
 
-const _totalSlottedElements = Symbol("totalSlottedElements")
+const _activeIndex = Symbol("activeIndex")
 const _forwardClickHandler = Symbol("forwardClickHandler")
 const _backwardClickHandler = Symbol("backwardClickHandler")
+const _totalSlottedElements = Symbol("totalSlottedElements")
 
 export class CarouserSystem extends Component {
 
@@ -80,16 +81,16 @@ export class CarouserSystem extends Component {
 
 	static get properties() {
 		return {
-			"active-index": {type: Number, reflect: true}
+			[_activeIndex]: {type: Number}
 		}
 	}
 
 	constructor() {
 		super()
-		this["active-index"] = 0
-		this.shadowRoot.addEventListener("slotchange", () => this.requestUpdate())
+		this[_activeIndex] = 0
 		this[_forwardClickHandler] = () => this.forward()
 		this[_backwardClickHandler] = () => this.backward()
+		this.shadowRoot.addEventListener("slotchange", () => this.requestUpdate())
 	}
 
 	jump(index) {
@@ -98,21 +99,22 @@ export class CarouserSystem extends Component {
 				&&
 			index >= 0
 		)
-		if (doable) this["active-index"] = index
+		if (doable)
+			this[_activeIndex] = index
 		return doable
 	}
 
 	forward() {
-		return this.jump(this["active-index"] + 1)
+		return this.jump(this[_activeIndex] + 1)
 	}
 
 	backward() {
-		return this.jump(this["active-index"] - 1)
+		return this.jump(this[_activeIndex] - 1)
 	}
 
 	updated() {
 		const slot = this.shadowRoot.querySelector("slot")
-		const activeIndex = this["active-index"]
+		const activeIndex = this[_activeIndex]
 		const slottedElements = slot.assignedElements()
 		slottedElements.forEach((slotted, index) => {
 			const active = index === activeIndex
@@ -122,7 +124,7 @@ export class CarouserSystem extends Component {
 	}
 
 	render() {
-		const activeIndex = this["active-index"]
+		const activeIndex = this[_activeIndex]
 		const first = activeIndex === 0
 		const last = activeIndex === (this[_totalSlottedElements] - 1)
 
@@ -132,7 +134,7 @@ export class CarouserSystem extends Component {
 				dots.push(html`
 					<button
 						tabindex="0"
-						?active="${i === this["active-index"]}"
+						?active="${i === this[_activeIndex]}"
 						@click="${() => this.jump(i)}">
 					</button>
 				`)
