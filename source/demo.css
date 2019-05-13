@@ -31,6 +31,40 @@ main > h1 {
 	margin-bottom: 1em;
 }
 
-carouser-pane {
-	padding: 1em 3em;
+carouser-system {
+	--carouser-slate-bg: rgba(255,255,255, 0.1);
+	--carouser-arrow-bg: rgba(100,100,100, 0.8);
+	--carouser-arrow-color: rgba(255,255,255, 0.5);
+	--carouser-arrow-color-hover: rgba(255,255,255, 0.7);
+	--carouser-arrow-color-active: rgba(255,255,255, 0.9);
+	--carouser-dotbar-bg: rgba(255,255,255, 0.05);
+	--carouser-dot-size: 0.8em;
+	--carouser-dot-bg: rgba(255,255,255, 0.3);
+	--carouser-dot-bg-hover: rgba(255,255,255, 0.6);
+	--carouser-dot-bg-active: rgba(255,255,255, 1);
+}
+
+carouser-pane figure {
+	position: relative;
+}
+
+carouser-pane figure > img {
+	width: 100%;
+	display: block;
+}
+
+carouser-pane figcaption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 0.5em;
+	color: white;
+	text-shadow: 0.5px 1px 1px rgba(0,0,0, 1);
+	background: rgba(0,0,0, 0.2);
+}
+
+carouser-pane figcaption a {
+	color: inherit;
 }
