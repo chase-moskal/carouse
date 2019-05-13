@@ -1,5 +1,5 @@
 
-export * from "./components/carousel-pane.js"
+export * from "./components/carouse-pane.js"
 export * from "./components/carouse-carousel.js"
 
 export * from "./toolbox/component.js"

@@ -1,16 +1,16 @@
 
 @charset "utf-8";
 
-carousel-pane figure {
+carouse-pane figure {
 	position: relative;
 }
 
-carousel-pane figure > img {
+carouse-pane figure > img {
 	width: 100%;
 	display: block;
 }
 
-carousel-pane figcaption {
+carouse-pane figcaption {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -22,6 +22,6 @@ carousel-pane figcaption {
 	background: rgba(0,0,0, 0.2);
 }
 
-carousel-pane figcaption a {
+carouse-pane figcaption a {
 	color: inherit;
 }
