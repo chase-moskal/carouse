@@ -1,27 +1,27 @@
 
 @charset "utf-8";
 
-carouse-pane figure {
+carouse-pane > figure {
 	position: relative;
 }
 
-carouse-pane figure > img {
+carouse-pane > figure > img {
 	width: 100%;
 	display: block;
 }
 
-carouse-pane figcaption {
+carouse-pane > figure > figcaption {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	text-align: center;
 	padding: 0.5em;
+	text-align: center;
 	color: white;
 	text-shadow: 0.5px 1px 1px rgba(0,0,0, 1);
 	background: rgba(0,0,0, 0.2);
 }
 
-carouse-pane figcaption a {
+carouse-pane > figure > figcaption a {
 	color: inherit;
 }
