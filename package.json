@@ -1,6 +1,6 @@
 {
 	"name": "carouse",
-	"version": "0.0.0-dev.0",
+	"version": "0.0.0-dev.1",
 	"description": "web component carousel ui",
 	"main": "source/index.js",
 	"module": "source/index.js",
