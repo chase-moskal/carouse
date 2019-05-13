@@ -30,9 +30,11 @@ export class CarouseSystem extends Component {
 				min-width: 100px;
 				min-height: 100px;
 				background: var(--carouse-slate-bg, rgba(255,255,255, 0.1));
+				background: url(svg)
 			}
 
 			.slate button {
+				opacity: 0.6;
 				z-index: 1;
 				position: absolute;
 				display: block;
@@ -40,28 +42,35 @@ export class CarouseSystem extends Component {
 				bottom: 0;
 				margin: auto;
 				padding: 0.5em;
+				width: 2em;
 				height: 2em;
 				border: 0;
 				background: var(--carouse-arrow-bg, rgba(100,100,100, 0.8));
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
 				color: var(--carouse-arrow-color, rgba(255,255,255, 0.5));
 				cursor: pointer;
 				font-size: 1.5em;
 			}
 
-			.slate button:hover {
-				color: var(--carouse-arrow-color-hover, rgba(255,255,255, 0.7));
+			.slate button:hover,
+			.slate button:focus {
+				opacity: 0.8;
 			}
 
 			.slate button:active {
-				color: var(--carouse-arrow-color-active, rgba(255,255,255, 0.9));
+				opacity: 1;
 			}
 
 			.slate button:nth-child(1) {
 				left: 0;
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16"><path fill="white" fill-rule="evenodd" d="M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5 5-5z"/></svg>');
 			}
 
 			.slate button:nth-child(2) {
 				right: 0;
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16"><path fill="white" fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z"/></svg>');
 			}
 
 			.slate button[hidden] {
@@ -165,8 +174,8 @@ export class CarouseSystem extends Component {
 
 		return html`
 			<div class="slate">
-				<button @click="${this[_backwardClickHandler]}" ?hidden="${first}">⮜</button>
-				<button @click="${this[_forwardClickHandler]}" ?hidden="${last}">⮞</button>
+				<button @click="${this[_backwardClickHandler]}" ?hidden="${first}"></button>
+				<button @click="${this[_forwardClickHandler]}" ?hidden="${last}"></button>
 				<slot></slot>
 			</div>
 			${renderDots()}
