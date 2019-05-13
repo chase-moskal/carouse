@@ -6,7 +6,7 @@ const _forwardClickHandler = Symbol("forwardClickHandler")
 const _backwardClickHandler = Symbol("backwardClickHandler")
 const _totalSlottedElements = Symbol("totalSlottedElements")
 
-export class CarouserSystem extends Component {
+export class CarouseSystem extends Component {
 
 	static get styles() {
 		return css`
@@ -29,7 +29,7 @@ export class CarouserSystem extends Component {
 				display: block;
 				min-width: 100px;
 				min-height: 100px;
-				background: var(--carouser-slate-bg, rgba(255,255,255, 0.1));
+				background: var(--carouse-slate-bg, rgba(255,255,255, 0.1));
 			}
 
 			.slate button {
@@ -42,18 +42,18 @@ export class CarouserSystem extends Component {
 				padding: 0.5em;
 				height: 2em;
 				border: 0;
-				background: var(--carouser-arrow-bg, rgba(100,100,100, 0.8));
-				color: var(--carouser-arrow-color, rgba(255,255,255, 0.5));
+				background: var(--carouse-arrow-bg, rgba(100,100,100, 0.8));
+				color: var(--carouse-arrow-color, rgba(255,255,255, 0.5));
 				cursor: pointer;
 				font-size: 1.5em;
 			}
 
 			.slate button:hover {
-				color: var(--carouser-arrow-color-hover, rgba(255,255,255, 0.7));
+				color: var(--carouse-arrow-color-hover, rgba(255,255,255, 0.7));
 			}
 
 			.slate button:active {
-				color: var(--carouser-arrow-color-active, rgba(255,255,255, 0.9));
+				color: var(--carouse-arrow-color-active, rgba(255,255,255, 0.9));
 			}
 
 			.slate button:nth-child(1) {
@@ -73,29 +73,29 @@ export class CarouserSystem extends Component {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background: var(--carouser-dotbar-bg, rgba(255,255,255, 0.05));
+				background: var(--carouse-dotbar-bg, rgba(255,255,255, 0.05));
 			}
 
 			.dots > button {
 				display: block;
 				border: none;
-				--dotsize: var(--carouser-dot-size, 0.8em);
+				--dotsize: var(--carouse-dot-size, 0.8em);
 				width: var(--dotsize);
 				height: var(--dotsize);
 				margin: calc(var(--dotsize) * 1) calc(var(--dotsize) / 3);
 				border-radius: var(--dotsize);
-				background: var(--carouser-dot-bg, rgba(255,255,255, 0.3));
+				background: var(--carouse-dot-bg, rgba(255,255,255, 0.3));
 				cursor: pointer;
 			}
 
 			.dots > button:hover,
 			.dots > button:focus {
-				background: var(--carouser-dot-bg-hover, rgba(255,255,255, 0.6));
+				background: var(--carouse-dot-bg-hover, rgba(255,255,255, 0.6));
 			}
 
 			.dots > button[active],
 			.dots > button:active {
-				background: var(--carouser-dot-bg-active, rgba(255,255,255, 1));
+				background: var(--carouse-dot-bg-active, rgba(255,255,255, 1));
 			}
 		`
 	}

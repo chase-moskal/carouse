@@ -1,6 +1,6 @@
 {
-	"name": "carouser",
-	"version": "0.0.0",
+	"name": "carouse",
+	"version": "0.0.0-dev.0",
 	"description": "web component carousel ui",
 	"main": "source/index.js",
 	"module": "source/index.js",
@@ -29,12 +29,12 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/chase-moskal/carouser.git"
+		"url": "git+https://github.com/chase-moskal/carouse.git"
 	},
 	"author": "Chase Moskal <chasemoskal@gmail.com>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/chase-moskal/carouser/issues"
+		"url": "https://github.com/chase-moskal/carouse/issues"
 	},
-	"homepage": "https://github.com/chase-moskal/carouser#readme"
+	"homepage": "https://github.com/chase-moskal/carouse#readme"
 }
