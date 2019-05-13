@@ -1,4 +1,4 @@
 
 import "./register-all.js"
 
-document.querySelector("carouse-system").hidden = false
+document.querySelector("carouse-carousel").hidden = false

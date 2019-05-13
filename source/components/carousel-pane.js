@@ -1,7 +1,7 @@
 
 import {Component, html, css} from "../toolbox/component.js"
 
-export class CarousePane extends Component {
+export class CarouselPane extends Component {
 	static get styles() {
 		return css`
 			* {

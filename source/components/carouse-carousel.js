@@ -6,7 +6,7 @@ const _forwardClickHandler = Symbol("forwardClickHandler")
 const _backwardClickHandler = Symbol("backwardClickHandler")
 const _totalSlottedElements = Symbol("totalSlottedElements")
 
-export class CarouseSystem extends Component {
+export class CarouseCarousel extends Component {
 
 	static get styles() {
 		return css`
@@ -30,7 +30,6 @@ export class CarouseSystem extends Component {
 				min-width: 100px;
 				min-height: 100px;
 				background: var(--carouse-slate-bg, rgba(255,255,255, 0.1));
-				background: url(svg)
 			}
 
 			.slate button {
