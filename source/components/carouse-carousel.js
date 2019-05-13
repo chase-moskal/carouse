@@ -40,17 +40,15 @@ export class CarouseCarousel extends Component {
 				top: 0;
 				bottom: 0;
 				margin: auto;
-				padding: 0.5em;
-				width: 2em;
-				height: 2em;
+				padding: calc(var(--carouse-arrow-size, 4em) / 4);
+				width: var(--carouse-arrow-size, 4em);
+				height: var(--carouse-arrow-size, 4em);
 				border: 0;
 				background: var(--carouse-arrow-bg, rgba(100,100,100, 0.8));
 				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: center center;
-				color: var(--carouse-arrow-color, rgba(255,255,255, 0.5));
 				cursor: pointer;
-				font-size: 1.5em;
 			}
 
 			.slate button:hover,
@@ -81,10 +79,11 @@ export class CarouseCarousel extends Component {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background: var(--carouse-dotbar-bg, rgba(255,255,255, 0.05));
+				background: var(--carouse-dotbar-bg, transparent);
 			}
 
 			.dots > button {
+				opacity: 0.5;
 				display: block;
 				border: none;
 				--dotsize: var(--carouse-dot-size, 0.8em);
@@ -92,18 +91,18 @@ export class CarouseCarousel extends Component {
 				height: var(--dotsize);
 				margin: calc(var(--dotsize) * 1) calc(var(--dotsize) / 3);
 				border-radius: var(--dotsize);
-				background: var(--carouse-dot-bg, rgba(255,255,255, 0.3));
+				background: var(--carouse-dot-bg, white);
 				cursor: pointer;
 			}
 
 			.dots > button:hover,
 			.dots > button:focus {
-				background: var(--carouse-dot-bg-hover, rgba(255,255,255, 0.6));
+				opacity: 0.8;
 			}
 
 			.dots > button[active],
 			.dots > button:active {
-				background: var(--carouse-dot-bg-active, rgba(255,255,255, 1));
+				opacity: 1;
 			}
 		`
 	}

@@ -35,13 +35,9 @@ main > h1 {
 carouse-carousel {
 	--focus-outline: 2px solid #0ef;
 	--carouse-slate-bg: rgba(255,255,255, 0.1);
-	--carouse-arrow-bg: rgba(100,100,100, 0.8);
-	--carouse-arrow-color: rgba(255,255,255, 0.5);
-	--carouse-arrow-color-hover: rgba(255,255,255, 0.7);
-	--carouse-arrow-color-active: rgba(255,255,255, 0.9);
-	--carouse-dotbar-bg: rgba(255,255,255, 0.05);
+	--carouse-arrow-size: 4em;
+	--carouse-arrow-bg: rgba(60,60,60, 0.8);
+	--carouse-dotbar-bg: transparent;
 	--carouse-dot-size: 0.8em;
-	--carouse-dot-bg: rgba(255,255,255, 0.3);
-	--carouse-dot-bg-hover: rgba(255,255,255, 0.6);
-	--carouse-dot-bg-active: rgba(255,255,255, 1);
+	--carouse-dot-bg: white;
 }
