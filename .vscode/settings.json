@@ -15,5 +15,10 @@
 
 	"search.exclude": {
 		"dist": true
+	},
+
+	"[markdown]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
 	}
 }
