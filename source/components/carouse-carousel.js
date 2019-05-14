@@ -79,7 +79,7 @@ export class CarouseCarousel extends Component {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background: var(--carouse-dotbar-bg, transparent);
+				background: var(--carouse-dotbar-bg, rgba(0,0,0, 0.3));
 			}
 
 			.dots > button {
