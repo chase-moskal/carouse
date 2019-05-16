@@ -128,13 +128,20 @@ export class CarouseCarousel extends Component {
 	}
 
 	jump(index) {
-		const doable = (
-			index < this[_totalSlottedElements]
-				&&
-			index >= 0
-		)
+		const tooLittle = index < 0
+		const tooLate = index >= this[_totalSlottedElements]
+		let target = index
+		let doable = false
+		if (this.loop) {
+			doable = true
+			if (tooLittle) target = this[_totalSlottedElements] - 1
+			else if (tooLate) target = 0
+		}
+		else {
+			doable = (!tooLittle && !tooLate)
+		}
 		if (doable)
-			this[_activeIndex] = index
+			this[_activeIndex] = target
 		return doable
 	}
 
@@ -180,13 +187,13 @@ export class CarouseCarousel extends Component {
 			<div class="slate">
 				${this.arrows
 					? html`
-						<button @click="${this[_backwardClickHandler]}" ?hidden="${first}"></button>
-						<button @click="${this[_forwardClickHandler]}" ?hidden="${last}"></button>
+						<button @click="${this[_backwardClickHandler]}" ?hidden="${!this.loop && first}"></button>
+						<button @click="${this[_forwardClickHandler]}" ?hidden="${!this.loop && last}"></button>
 					`
 					: null}
 				<slot></slot>
 			</div>
-			${this.dots 
+			${this.dots
 				? renderDots()
 				: null}
 		`

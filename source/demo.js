@@ -1,4 +1,6 @@
 
 import "./register-all.js"
 
-document.querySelector("carouse-carousel").hidden = false
+const carousel = document.querySelector("carouse-carousel")
+carousel.hidden = false
+window.carousel = carousel
