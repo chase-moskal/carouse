@@ -1,5 +1,5 @@
 
-# 🎶🍻🍺 carouse 🍹🍸🚬
+# 🍻 carouse 🚬
 
 ***web component carousel ui***
 
@@ -104,3 +104,7 @@ live demos
     - if you're from the future, you won't need the `-shim`'s
   - **register the carouse component**
     - we run `import "carouse/dist/register-all.js"` to register the `<carouse-carousel>` component
+
+## contributions are welcome
+
+please open issues and launch pull requests, let's talk about it
