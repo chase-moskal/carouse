@@ -109,12 +109,18 @@ export class CarouseCarousel extends Component {
 
 	static get properties() {
 		return {
-			[_activeIndex]: {type: Number}
+			[_activeIndex]: {type: Number},
+			dots: {type: Boolean, reflect: true},
+			arrows: {type: Boolean, reflect: true},
+			loop: {type: Boolean, reflect: true}
 		}
 	}
 
 	constructor() {
 		super()
+		this.dots = false
+		this.arrows = false
+		this.loop = false
 		this[_activeIndex] = 0
 		this[_forwardClickHandler] = () => this.forward()
 		this[_backwardClickHandler] = () => this.backward()
@@ -172,11 +178,17 @@ export class CarouseCarousel extends Component {
 
 		return html`
 			<div class="slate">
-				<button @click="${this[_backwardClickHandler]}" ?hidden="${first}"></button>
-				<button @click="${this[_forwardClickHandler]}" ?hidden="${last}"></button>
+				${this.arrows
+					? html`
+						<button @click="${this[_backwardClickHandler]}" ?hidden="${first}"></button>
+						<button @click="${this[_forwardClickHandler]}" ?hidden="${last}"></button>
+					`
+					: null}
 				<slot></slot>
 			</div>
-			${renderDots()}
+			${this.dots 
+				? renderDots()
+				: null}
 		`
 	}
 }
