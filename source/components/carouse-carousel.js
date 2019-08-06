@@ -131,6 +131,13 @@ export class CarouseCarousel extends Component {
 		this.shadowRoot.addEventListener("slotchange", () => this.requestUpdate())
 	}
 
+	// workaround for bug in edge, fix initial appearance of dots
+	// force an update 100ms after connecting
+	connectedCallback() {
+		super.connectedCallback()
+		if (this.isConnected) setTimeout(() => this.requestUpdate(), 100)
+	}
+
 	jump(index) {
 		const tooLittle = index < 0
 		const tooLate = index >= this[_totalSlottedElements]
