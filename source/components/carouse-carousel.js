@@ -6,6 +6,13 @@ const _forwardClickHandler = Symbol("forwardClickHandler")
 const _backwardClickHandler = Symbol("backwardClickHandler")
 const _totalSlottedElements = Symbol("totalSlottedElements")
 
+if (!HTMLSlotElement.prototype.assignedElements) {
+	HTMLSlotElement.prototype.assignedElements = function() {
+		const nodes = Array.from(this.assignedNodes())
+		return nodes.filter(node => node instanceof HTMLElement)
+	}
+}
+
 export class CarouseCarousel extends Component {
 
 	static get styles() {
@@ -21,12 +28,14 @@ export class CarouseCarousel extends Component {
 			}
 
 			:host {
-				display: block;
+				position: relative;
+				display: flex;
+				flex-direction: column;
 			}
 
 			.slate {
-				position: relative;
 				display: block;
+				height: 100%;
 				min-width: 100px;
 				min-height: 100px;
 				background: var(--carouse-slate-bg, rgba(255,255,255, 0.1));
@@ -34,7 +43,7 @@ export class CarouseCarousel extends Component {
 
 			.slate button {
 				opacity: 0.6;
-				z-index: 1;
+				z-index: 2;
 				position: absolute;
 				display: block;
 				top: 0;
@@ -75,6 +84,7 @@ export class CarouseCarousel extends Component {
 			}
 
 			.dots {
+				z-index: 1;
 				width: 100%;
 				display: flex;
 				justify-content: center;

@@ -1,6 +1,6 @@
 {
 	"name": "carouse",
-	"version": "0.0.0-dev.4",
+	"version": "0.0.0",
 	"description": "web component carousel ui",
 	"main": "dist/register-all.js",
 	"module": "dist/register-all.js",
