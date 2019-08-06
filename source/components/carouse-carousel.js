@@ -1,17 +1,11 @@
 
 import {Component, html, css} from "../toolbox/component.js"
+import {getAssignedElements} from "../toolbox/get-assigned-elements.js"
 
 const _activeIndex = Symbol("activeIndex")
 const _forwardClickHandler = Symbol("forwardClickHandler")
 const _backwardClickHandler = Symbol("backwardClickHandler")
 const _totalSlottedElements = Symbol("totalSlottedElements")
-
-if (!HTMLSlotElement.prototype.assignedElements) {
-	HTMLSlotElement.prototype.assignedElements = function() {
-		const nodes = Array.from(this.assignedNodes())
-		return nodes.filter(node => node instanceof HTMLElement)
-	}
-}
 
 export class CarouseCarousel extends Component {
 
@@ -166,7 +160,7 @@ export class CarouseCarousel extends Component {
 	updated() {
 		const slot = this.shadowRoot.querySelector("slot")
 		const activeIndex = this[_activeIndex]
-		const slottedElements = slot.assignedElements()
+		const slottedElements = getAssignedElements(slot)
 		slottedElements.forEach((slotted, index) => {
 			const active = index === activeIndex
 			slotted.hidden = !active
